@@ -1,0 +1,55 @@
+import os
+
+# Contenuto finale ottimizzato
+html_final = """<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semplice Mente | La politica, spiegata semplice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FFFAFA; 
+            --text: #2F2F2F;
+            --brand: #002366; 
+            --highlight: #FFF9C4;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
+        .logo { font-weight: 800; color: var(--brand); text-decoration: none; font-size: 1.2rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 5%; }
+        .hero { text-align: center; margin-bottom: 60px; }
+        .hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: #666; margin-bottom: 30px; }
+        .btn { background: var(--brand); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .section-title { margin: 40px 0 20px; font-size: 1.5rem; border-bottom: 4px solid var(--highlight); display: inline-block; }
+        .card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px; }
+        .fact-check { border-left: 5px solid var(--brand); }
+        .verdict { display: inline-block; padding: 4px 10px; border-radius: 4px; color: white; font-size: 0.8rem; font-weight: 800; margin-top: 10px; }
+        .falso { background: #e74c3c; }
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <nav><a href="#" class="logo">🧠 SEMPLICE MENTE</a></nav>
+    <div class="container">
+        <div class="hero">
+            <h1>La politica, spiegata semplice.</h1>
+            <p>Informazione chiara, verificata, senza rumore.</p>
+            <a href="#" class="btn">Inizia a leggere</a>
+        </div>
+        <h2 class="section-title">Fatti vs Opinioni</h2>
+        <div class="card fact-check">
+            <strong>"L'Europa ci impone di mangiare insetti"</strong>
+            <p>Falso. L'UE ha solo autorizzato il commercio per chi lo desidera.</p>
+            <div class="verdict falso">FALSO</div>
+        </div>
+    </div>
+    <footer>&copy; 2026 Semplice Mente</footer>
+</body>
+</html>"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html_final)
