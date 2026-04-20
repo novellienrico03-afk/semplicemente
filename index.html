@@ -53,3 +53,14 @@ html_final = """<!DOCTYPE html>
 
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html_final)
+<section class="newsletter-box">
+            <h2>Capire la politica in 5 minuti</h2>
+            <p>Iscriviti alla lista d'attesa. Ogni sabato mattina riceverai un riassunto dei fatti più importanti, spiegati con parole semplici. Zero spam.</p>
+            
+            <form class="form-mini" action="https://formspree.io/f/IL_TUO_CODICE_QUI" method="POST">
+                
+                <input type="email" name="email" placeholder="La tua migliore email..." required>
+                <button type="submit" class="btn-submit">Iscriviti</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #777;">Non invieremo spam. Potrai cancellarti in qualsiasi momento.</p>
+        </section>
