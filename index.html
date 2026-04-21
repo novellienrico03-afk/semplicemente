@@ -1,221 +1,4 @@
-import os
-
-# Contenuto finale ottimizzato
-html_final = """<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semplice Mente | La politica, spiegata semplice</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #FFFAFA; 
-            --text: #2F2F2F;
-            --brand: #002366; 
-            --highlight: #FFF9C4;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
-        .logo { font-weight: 800; color: var(--brand); text-decoration: none; font-size: 1.2rem; }
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 5%; }
-        .hero { text-align: center; margin-bottom: 60px; }
-        .hero h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; color: #666; margin-bottom: 30px; }
-        .btn { background: var(--brand); color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; }
-        .section-title { margin: 40px 0 20px; font-size: 1.5rem; border-bottom: 4px solid var(--highlight); display: inline-block; }
-        .card { background: white; padding: 25px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px; }
-        .fact-check { border-left: 5px solid var(--brand); }
-        .verdict { display: inline-block; padding: 4px 10px; border-radius: 4px; color: white; font-size: 0.8rem; font-weight: 800; margin-top: 10px; }
-        .falso { background: #e74c3c; }
-        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8rem; }
-    </style>
-</head>
-<body>
-    <nav><a href="#" class="logo">🧠 SEMPLICE MENTE</a></nav>
-    <div class="container">
-        <div class="hero">
-            <h1>La politica, spiegata semplice.</h1>
-            <p>Informazione chiara, verificata, senza rumore.</p>
-            <a href="#" class="btn">Inizia a leggere</a>
-        </div>
-        <h2 class="section-title">Fatti vs Opinioni</h2>
-        <div class="card fact-check">
-            <strong>"L'Europa ci impone di mangiare insetti"</strong>
-            <p>Falso. L'UE ha solo autorizzato il commercio per chi lo desidera.</p>
-            <div class="verdict falso">FALSO</div>
-        </div>
-    </div>
-    <footer>&copy; 2026 Semplice Mente</footer>
-</body>
-</html>"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(html_final)
-<section class="newsletter-box">
-            <h2>Capire la politica in 5 minuti</h2>
-            <p>Iscriviti alla lista d'attesa. Ogni sabato mattina riceverai un riassunto dei fatti più importanti, spiegati con parole semplici. Zero spam.</p>
-            
-            <form class="form-mini" action="https://formspree.io/f/IL_TUO_CODICE_QUI" method="POST">
-                
-                <input type="email" name="email" placeholder="La tua migliore email..." required>
-                <button type="submit" class="btn-submit">Iscriviti</button>
-            </form>
-            <p style="font-size: 0.8rem; margin-top: 15px; color: #777;">Non invieremo spam. Potrai cancellarti in qualsiasi momento.</p>
-        </section>
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semplice Mente | La politica, spiegata semplice</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- VARIABILI DESIGN SYSTEM --- */
-        :root {
-            --snow-white: #FFFAFA;      
-            --dark-gray: #2F2F2F;       
-            --cobalt-blue: #002366;     
-            --mustard-yellow: #FFF9C4;  
-            --pure-white: #ffffff;      
-            --light-border: #eeeeee;    
-            --verdict-v: #2ecc71;       
-            --verdict-f: #e74c3c;       
-            --verdict-m: #f39c12;       
-        }
-
-        /* --- RESET & BASE --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--snow-white); 
-            color: var(--dark-gray); 
-            line-height: 1.6; 
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- NAVIGAZIONE --- */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: rgba(255, 250, 250, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid var(--light-border);
-        }
-        .logo { font-weight: 800; font-size: 1.4rem; color: var(--cobalt-blue); text-decoration: none; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; font-size: 0.9rem; transition: 0.2s; }
-        .nav-links a:hover { color: var(--cobalt-blue); }
-
-        /* --- LAYOUT --- */
-        .container { max-width: 1050px; margin: 0 auto; padding: 0 5%; }
-        section { padding: 80px 0; }
-
-        /* --- HERO --- */
-        .hero { text-align: center; padding: 140px 0 100px; }
-        .hero h1 { font-size: 3.8rem; font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 20px; color: var(--dark-gray); }
-        .hero p { font-size: 1.3rem; color: #666; max-width: 650px; margin: 0 auto 40px; font-weight: 300; }
-        .cta-primary { 
-            background: var(--cobalt-blue); color: var(--pure-white); 
-            padding: 18px 40px; border-radius: 12px; text-decoration: none; 
-            font-weight: 600; display: inline-block; transition: 0.3s;
-        }
-        .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,35,102,0.15); }
-
-        /* --- SECTIONS TITLES --- */
-        .section-header { margin-bottom: 40px; }
-        .section-header h2 { font-size: 2rem; font-weight: 800; margin-bottom: 10px; }
-        .accent-line { width: 60px; height: 5px; background: var(--mustard-yellow); border-radius: 10px; }
-
-        /* --- GRIGLIA ARTICOLI --- */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { 
-            background: var(--pure-white); padding: 35px; border-radius: 16px; 
-            border: 1px solid var(--light-border); transition: 0.3s; text-decoration: none; color: inherit;
-            display: flex; flex-direction: column;
-        }
-        .card:hover { transform: translateY(-5px); border-color: #ddd; box-shadow: 0 15px 35px rgba(0,0,0,0.03); }
-        .card-tag { font-size: 0.75rem; font-weight: 700; color: var(--cobalt-blue); text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
-        .card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; line-height: 1.3; }
-        .card p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
-        .card-footer { margin-top: auto; font-size: 0.85rem; font-weight: 600; color: #999; }
-
-        /* --- FATTI VS OPINIONI --- */
-        .fact-check-item { 
-            background: var(--pure-white); border-radius: 16px; border: 1px solid var(--light-border);
-            padding: 30px; margin-bottom: 25px; display: flex; flex-direction: column; gap: 15px;
-            position: relative; overflow: hidden;
-        }
-        .fact-check-item::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--cobalt-blue); }
-        .statement { font-weight: 600; font-size: 1.1rem; font-style: italic; color: var(--dark-gray); }
-        .analysis { font-size: 0.95rem; color: #555; }
-        .verdict-badge { 
-            display: inline-block; align-self: flex-start; padding: 6px 14px; 
-            border-radius: 6px; font-weight: 800; font-size: 0.75rem; color: #fff; text-transform: uppercase;
-        }
-        .v-vero { background: var(--verdict-v); }
-        .v-falso { background: var(--verdict-f); }
-        .v-fuorviante { background: var(--verdict-m); }
-
-        /* --- NEWSLETTER / WAITLIST --- */
-        .newsletter-box { 
-            background: var(--mustard-yellow); padding: 70px 5%; border-radius: 30px; 
-            text-align: center; margin-top: 50px;
-        }
-        .newsletter-box h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; }
-        .newsletter-box p { font-size: 1.1rem; color: #554400; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .form-mini { display: flex; max-width: 500px; margin: 0 auto; gap: 10px; }
-        .form-mini input { 
-            flex: 1; padding: 15px 20px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); 
-            font-family: inherit; font-size: 1rem;
-        }
-        .form-mini input:focus { outline: 2px solid var(--cobalt-blue); }
-        .btn-submit { 
-            background: var(--cobalt-blue); color: white; border: none; 
-            padding: 0 30px; border-radius: 10px; font-weight: 600; cursor: pointer; transition: 0.2s; font-size: 1rem;
-        }
-        .btn-submit:hover { opacity: 0.9; transform: translateY(-2px); }
-        .privacy-note { font-size: 0.85rem; margin-top: 15px; color: #777; }
-
-        /* --- FOOTER --- */
-        footer { padding: 80px 0 40px; border-top: 1px solid var(--light-border); text-align: center; color: #999; font-size: 0.9rem; }
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: #666; margin: 0 15px; text-decoration: none; }
-
-        /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .nav-links { display: none; }
-            .grid { grid-template-columns: 1fr; }
-            .form-mini { flex-direction: column; }
-            .btn-submit { padding: 15px; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="#" class="logo">🧠 SEMPLICE MENTE</a>
-        <ul class="nav-links">
-            <li><a href="#spiegazioni">Spiegazioni</a></li>
-            <li><a href="#guide">Guide</a></li>
-            <li><a href="#fatti">Fatti vs Opinioni</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -229,16 +12,16 @@ with open("index.html", "w", encoding="utf-8") as f:
     <style>
         /* --- VARIABILI PREMIUM --- */
         :root {
-            --snow-white: #FCFCFD;      /* Più morbido del bianco puro */
-            --dark-gray: #1a1a2e;       /* Antracite elegante */
-            --text-muted: #5f6368;      /* Grigio per i testi secondari */
-            --cobalt-blue: #0A2463;     /* Blu più profondo */
-            --accent-blue: #246BCE;     /* Blu per hover */
-            --mustard-yellow: #FFF3B0;  /* Giallo pastello morbido */
+            --snow-white: #FCFCFD;      
+            --dark-gray: #1a1a2e;       
+            --text-muted: #5f6368;      
+            --cobalt-blue: #0A2463;     
+            --accent-blue: #246BCE;     
+            --mustard-yellow: #FFF3B0;  
             --pure-white: #ffffff;      
-            --verdict-v: #10B981;       /* Verde smeraldo */
-            --verdict-f: #EF4444;       /* Rosso corallo */
-            --verdict-m: #F59E0B;       /* Arancio dorato */
+            --verdict-v: #10B981;       
+            --verdict-f: #EF4444;       
+            --verdict-m: #F59E0B;       
             
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
             --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
@@ -352,7 +135,7 @@ with open("index.html", "w", encoding="utf-8") as f:
         .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; line-height: 1.3; }
         .card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 25px; }
         .card-footer { margin-top: auto; font-size: 0.9rem; font-weight: 600; color: var(--accent-blue); display: flex; align-items: center; gap: 5px; }
-        .card:hover .card-footer { gap: 10px; } /* Effetto freccia che si sposta */
+        .card:hover .card-footer { gap: 10px; }
 
         /* --- FATTI VS OPINIONI --- */
         .fact-check-container { max-width: 800px; margin: 0 auto; }
@@ -450,13 +233,13 @@ with open("index.html", "w", encoding="utf-8") as f:
                     <span class="card-tag">Economia • 4 min</span>
                     <h3>Cosa cambia davvero con la nuova manovra</h3>
                     <p>Abbiamo analizzato i tre punti chiave su tasse, pensioni e sanità per capire l'impatto reale sulle tue tasche.</p>
-                    <div class="card-footer">Leggi l'articolo <span style="transition: transform 0.3s;">→</span></div>
+                    <div class="card-footer">Leggi l'articolo <span>→</span></div>
                 </a>
                 <a href="#" class="card">
                     <span class="card-tag">Europa • 5 min</span>
                     <h3>Case Green: la guida definitiva alle nuove norme</h3>
                     <p>Cosa prevede la direttiva UE sull'efficienza energetica degli edifici e quali scadenze devi conoscere.</p>
-                    <div class="card-footer">Leggi l'articolo <span style="transition: transform 0.3s;">→</span></div>
+                    <div class="card-footer">Leggi l'articolo <span>→</span></div>
                 </a>
             </div>
         </section>
@@ -527,101 +310,6 @@ with open("index.html", "w", encoding="utf-8") as f:
             <a href="#">Contatti</a>
         </div>
         <p>&copy; 2026 Semplice Mente. L'informazione chiara è un diritto.</p>
-    </footer>
-
-</body>
-</html>
-        <header class="hero">
-            <h1>La politica,<br>spiegata semplice.</h1>
-            <p>Informazione chiara, verificata e senza rumore per chi vuole capire cosa succede davvero, in pochi minuti.</p>
-            <a href="#spiegazioni" class="cta-primary">Inizia a leggere</a>
-        </header>
-
-        <section id="spiegazioni">
-            <div class="section-header">
-                <h2>Ultime spiegazioni</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="grid">
-                <a href="#" class="card">
-                    <span class="card-tag">Economia • 4 min</span>
-                    <h3>Cosa cambia davvero con la nuova manovra</h3>
-                    <p>Abbiamo analizzato i tre punti chiave su tasse, pensioni e sanità per capire l'impatto reale sulle tue tasche.</p>
-                    <div class="card-footer">Leggi la spiegazione →</div>
-                </a>
-                <a href="#" class="card">
-                    <span class="card-tag">Europa • 5 min</span>
-                    <h3>Case Green: la guida definitiva alle nuove norme</h3>
-                    <p>Cosa prevede la direttiva UE sull'efficienza energetica degli edifici e quali scadenze devi conoscere.</p>
-                    <div class="card-footer">Leggi la spiegazione →</div>
-                </a>
-            </div>
-        </section>
-
-        <section id="guide">
-            <div class="section-header">
-                <h2>Guide per principianti</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>🏛️ Come funziona il Parlamento</h3>
-                    <p>Perché abbiamo due camere e come fanno a mettersi d'accordo per creare una legge.</p>
-                </div>
-                <div class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>🗳️ Come si vota in Italia</h3>
-                    <p>Il sistema elettorale spiegato senza paroloni: cos'è il proporzionale e il maggioritario.</p>
-                </div>
-                <div class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>💶 Cos'è il Debito Pubblico</h3>
-                    <p>Perché lo Stato chiede soldi in prestito e cosa succede se non può ripagarli.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="fatti">
-            <div class="section-header">
-                <h2>Fatti vs Opinioni</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="fact-check-item">
-                <div class="statement">"L'Europa ci impone di mangiare farina di insetti."</div>
-                <div class="analysis">L'UE ha autorizzato la vendita di alcuni alimenti a base di insetti. Si tratta di un'autorizzazione commerciale per chi li produce, non di un obbligo per chi mangia.</div>
-                <div class="verdict-badge v-falso">Falso</div>
-            </div>
-
-            <div class="fact-check-item">
-                <div class="statement">"Le tasse in Italia sono le più alte d'Europa."</div>
-                <div class="analysis">L'Italia ha una pressione fiscale molto alta, ma secondo i dati Eurostat 2023 siamo dietro a Francia, Belgio e Danimarca.</div>
-                <div class="verdict-badge v-fuorviante">Fuorviante</div>
-            </div>
-        </section>
-
-        <section class="newsletter-box">
-            <h2>Capire la politica in 5 minuti</h2>
-            <p>Iscriviti alla lista d'attesa. Ogni sabato mattina riceverai un riassunto dei fatti più importanti, spiegati con parole semplici. Zero spam.</p>
-            
-            <form class="form-mini" action="https://formspree.io/f/IL_TUO_CODICE_QUI" method="POST">
-                <input type="email" name="email" placeholder="Inserisci la tua email..." required>
-                <button type="submit" class="btn-submit">Iscriviti</button>
-            </form>
-            
-            <p class="privacy-note">Non invieremo spam. Potrai cancellarti in qualsiasi momento.</p>
-        </section>
-
-    </div>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#">Chi Siamo</a>
-            <a href="#">Privacy</a>
-            <a href="#">Contatti</a>
-        </div>
-        <p>&copy; 2026 Semplice Mente. Tutti i diritti riservati.</p>
     </footer>
 
 </body>
