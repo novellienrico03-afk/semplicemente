@@ -1,100 +1,109 @@
-import Link from 'next/link';
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semplice Mente - La notizia, spiegata semplice.</title>
+    <!-- Script per far funzionare Tailwind CSS direttamente nell'HTML -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter per la massima leggibilità -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#FFFAFA] text-[#2F2F2F] antialiased selection:bg-[#FFF9C4]">
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-200">
-      
-      {/* HEADER / NAVIGATION */}
-      <header className="border-b border-neutral-200 py-6">
-        <div className="max-w-5xl mx-auto px-6 flex justify-between items-baseline">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-neutral-900">Semplice Mente</h1>
-            <p className="text-sm text-neutral-500 mt-1">La notizia, spiegata semplice.</p>
-          </div>
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-neutral-600">
-            <Link href="/politica" className="hover:text-neutral-900 transition-colors">Politica</Link>
-            <Link href="/musica" className="hover:text-neutral-900 transition-colors">Musica</Link>
-            <Link href="/filmografia" className="hover:text-neutral-900 transition-colors">Filmografia</Link>
-            <Link href="/sport" className="hover:text-neutral-900 transition-colors">Sport</Link>
-          </nav>
+    <!-- HEADER / MENU -->
+    <header class="border-b border-gray-200 py-6">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-baseline gap-4">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight text-[#002366]">Semplice Mente</h1>
+                <p class="text-sm text-gray-500 mt-1">La notizia, spiegata semplice.</p>
+            </div>
+            <nav class="flex flex-wrap gap-4 md:gap-6 text-sm font-medium text-gray-600">
+                <a href="#politica" class="hover:text-[#002366] transition-colors">Semplice Politica</a>
+                <a href="#musica" class="hover:text-[#002366] transition-colors">Semplice Musica</a>
+                <a href="#filmografia" class="hover:text-[#002366] transition-colors">Semplice Filmografia</a>
+                <a href="#sport" class="hover:text-[#002366] transition-colors">Semplice Sport</a>
+            </nav>
         </div>
-      </header>
+    </header>
 
-      {/* IN PRIMO PIANO */}
-      <section className="max-w-5xl mx-auto px-6 py-12 md:py-20">
-        <div className="bg-white border border-neutral-200 p-8 md:p-12 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-          <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3 block">In evidenza</span>
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-900 leading-tight mb-4">
-            Come funzionano i bandi del PNRR: una guida senza burocratese
-          </h2>
-          <p className="text-neutral-600 text-lg mb-8 max-w-2xl leading-relaxed">
-            Mettiamo da parte le polemiche tra partiti e analizziamo i dati. Cosa significa davvero questo piano per lo sviluppo locale e come i comuni stanno gestendo i fondi.
-          </p>
-          <Link href="/articolo/pnrr-spiegato" className="inline-flex items-center text-sm font-semibold bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors">
-            Leggi l'articolo
-          </Link>
+    <!-- IN EVIDENZA (HERO SECTION) -->
+    <section class="max-w-5xl mx-auto px-6 py-12 md:py-20">
+        <div class="bg-white border border-gray-200 p-8 md:p-12 rounded-2xl shadow-sm">
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3 block">In evidenza - La Bussola (Lunedì)</span>
+            <h2 class="text-3xl md:text-5xl font-semibold tracking-tight text-[#2F2F2F] leading-tight mb-4">
+                Come funzionano i bandi del PNRR: una guida senza burocratese
+            </h2>
+            <p class="text-gray-600 text-lg mb-8 max-w-2xl leading-relaxed">
+                Mettiamo da parte le polemiche e analizziamo i dati. Cosa significa davvero questo piano per lo sviluppo locale e come i comuni stanno gestendo i fondi.
+            </p>
+            <a href="#" class="inline-flex items-center text-sm font-semibold bg-[#002366] text-white px-6 py-3 rounded-full hover:bg-blue-900 transition-colors">
+                Leggi l'articolo
+            </a>
         </div>
-      </section>
+    </section>
 
-      {/* GRIGLIA CATEGORIE */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* SEMPLICE POLITICA */}
-          <div className="group">
-            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Politica</h3>
-            <article className="mb-6">
-              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
-                Elezioni e sondaggi: perché spesso non ci azzeccano
-              </h4>
-              <p className="text-neutral-500 text-sm line-clamp-2">
-                Un'analisi oggettiva sui margini di errore dei campionamenti e su come la statistica viene spesso fraintesa dai media tradizionali.
-              </p>
-            </article>
-          </div>
+    <!-- GRIGLIA DELLE 4 CATEGORIE -->
+    <section class="max-w-5xl mx-auto px-6 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <!-- Semplice Politica -->
+            <div>
+                <h3 class="text-xl font-bold text-[#002366] mb-6 border-b border-gray-200 pb-2">Semplice Politica</h3>
+                <article>
+                    <h4 class="text-lg font-medium text-[#2F2F2F] hover:text-[#002366] transition-colors mb-2 cursor-pointer">
+                        Elezioni e sondaggi: perché spesso non ci azzeccano
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        Un'analisi oggettiva sui margini di errore dei campionamenti e sulla statistica (Il Punto del Venerdì).
+                    </p>
+                </article>
+            </div>
 
-          {/* SEMPLICE MUSICA */}
-          <div className="group">
-            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Musica</h3>
-            <article className="mb-6">
-              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
-                L'evoluzione del suono nell'indie rock: le chitarre di King Krule
-              </h4>
-              <p className="text-neutral-500 text-sm line-clamp-2">
-                Come accordature non convenzionali e riverberi hanno ridefinito le atmosfere malinconiche dell'underground britannico.
-              </p>
-            </article>
-          </div>
+            <!-- Semplice Musica -->
+            <div>
+                <h3 class="text-xl font-bold text-[#002366] mb-6 border-b border-gray-200 pb-2">Semplice Musica</h3>
+                <article>
+                    <h4 class="text-lg font-medium text-[#2F2F2F] hover:text-[#002366] transition-colors mb-2 cursor-pointer">
+                        L'evoluzione del suono nell'indie rock: le chitarre di King Krule
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        Come accordature non convenzionali hanno ridefinito le atmosfere dell'underground (Rubrica del Martedì).
+                    </p>
+                </article>
+            </div>
 
-          {/* SEMPLICE FILMOGRAFIA */}
-          <div className="group">
-            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Filmografia</h3>
-            <article className="mb-6">
-              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
-                Estetica e narrazione: l'impatto di Django Unchained
-              </h4>
-              <p className="text-neutral-500 text-sm line-clamp-2">
-                La grammatica visiva di Quentin Tarantino applicata allo spaghetti western: un equilibrio tra citazionismo e critica sociale.
-              </p>
-            </article>
-          </div>
+            <!-- Semplice Filmografia -->
+            <div>
+                <h3 class="text-xl font-bold text-[#002366] mb-6 border-b border-gray-200 pb-2">Semplice Filmografia</h3>
+                <article>
+                    <h4 class="text-lg font-medium text-[#2F2F2F] hover:text-[#002366] transition-colors mb-2 cursor-pointer">
+                        Estetica e narrazione: l'impatto di Django Unchained
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        La grammatica visiva applicata allo spaghetti western: equilibrio tra citazionismo e critica (Schermi del Giovedì).
+                    </p>
+                </article>
+            </div>
 
-          {/* SEMPLICE SPORT */}
-          <div className="group">
-            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Sport</h3>
-            <article className="mb-6">
-              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
-                Storie dalla Seconda Categoria: passione e tattica in provincia
-              </h4>
-              <p className="text-neutral-500 text-sm line-clamp-2">
-                Lontano dai riflettori della Serie A, il calcio dilettantistico modenese offre uno spaccato di sport autentico e comunità.
-              </p>
-            </article>
-          </div>
+            <!-- Semplice Sport -->
+            <div>
+                <h3 class="text-xl font-bold text-[#002366] mb-6 border-b border-gray-200 pb-2">Semplice Sport</h3>
+                <article>
+                    <h4 class="text-lg font-medium text-[#2F2F2F] hover:text-[#002366] transition-colors mb-2 cursor-pointer">
+                        Storie dalla Seconda Categoria: passione in provincia
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        Lontano dai riflettori, il calcio dilettantistico offre uno spaccato di sport autentico e comunità (Sport Autentico del Mercoledì).
+                    </p>
+                </article>
+            </div>
 
         </div>
-      </section>
-      
-    </main>
-  );
-}
+    </section>
+    
+</body>
+</html>
