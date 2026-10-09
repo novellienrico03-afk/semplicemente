@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Classi personalizzate per le animazioni di entrata */
+        /* Animazioni di Entrata (Scroll) */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -38,17 +38,33 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Gestione ritardo animazioni per l'effetto a cascata nella griglia */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
+
+        /* --- NOVITÀ: Animazioni SVG Cervello Stile Bending Spoons --- */
+        .brain-stroke {
+            stroke-dasharray: 1500;
+            stroke-dashoffset: 1500;
+            animation: drawBrain 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        .brain-stroke-delay {
+            stroke-dasharray: 800;
+            stroke-dashoffset: 800;
+            animation: drawBrain 2.5s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
+        }
+        @keyframes drawBrain {
+            to { stroke-dashoffset: 0; }
+        }
+        .brain-glow {
+            filter: drop-shadow(0 0 12px rgba(0, 35, 102, 0.4));
+        }
     </style>
 </head>
 <body class="bg-neve text-antracite font-sans antialiased selection:bg-highlight selection:text-antracite">
 
-    <!-- HEADER STICKY (Glassmorphism) -->
+    <!-- HEADER STICKY -->
     <header class="fixed w-full top-0 z-50 bg-neve/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="flex flex-col group">
@@ -81,22 +97,38 @@
         </div>
     </header>
 
-    <!-- HERO SECTION VISONARIA -->
-    <section id="home" class="pt-40 pb-20 px-6 max-w-6xl mx-auto min-h-[70vh] flex flex-col justify-center">
-        <div class="fade-in-up">
-            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.1] mb-6">
-                La notizia,<br>
-                <span class="text-cobalto">spiegata semplice.</span>
-            </h2>
-            <p class="text-xl md:text-2xl text-gray-500 max-w-2xl font-medium mb-10 leading-relaxed">
-                Nessun rumore di fondo. Nessuna cronaca nera. 
-                Solo i fatti che contano e le passioni che ci guidano, analizzati con spirito critico.
-            </p>
-            <div class="flex gap-4">
-                <a href="#in-evidenza" class="bg-cobalto text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-blue-900 transition-all hover:-translate-y-1 hover:shadow-xl shadow-md">
-                    Leggi le ultime
-                </a>
+    <!-- HERO SECTION VISIONARIA CON CERVELLO ANIMATO -->
+    <section id="home" class="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[75vh] flex flex-col justify-center items-center text-center">
+        
+        <!-- Contenitore Testo + Cervello -->
+        <div class="fade-in-up relative max-w-3xl mx-auto py-20 px-8 flex flex-col items-center group cursor-default">
+            
+            <!-- CONTORNO CERVELLO (SVG Vettoriale) -->
+            <svg class="absolute inset-0 w-full h-full text-cobalto opacity-20 group-hover:opacity-100 group-hover:brain-glow transition-all duration-700 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid meet">
+                <!-- Silhouette esterna -->
+                <path class="brain-stroke" d="M176,216H136V128m-16,88H80a40,40,0,0,1-37.56-26.27A32,32,0,0,1,36,132,40,40,0,0,1,60.27,61.42,40,40,0,0,1,128,48a40,40,0,0,1,67.73,13.42A40,40,0,0,1,220,132a32,32,0,0,1-6.44,57.73A40,40,0,0,1,176,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+                <!-- Dettagli interni (Pieghe) -->
+                <path class="brain-stroke-delay" d="M128,104a32,32,0,0,0-58.31-18M128,104a32,32,0,0,1,58.31-18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+                <path class="brain-stroke-delay" d="M128,160a32,32,0,0,0-54.21-23.75M128,160a32,32,0,0,1,54.21-23.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            </svg>
+
+            <!-- CONTENUTO TESTUALE -->
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6">
+                    La notizia,<br>
+                    <span class="text-cobalto">spiegata semplice.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto font-medium mb-10 leading-relaxed">
+                    Nessun rumore di fondo. Nessuna cronaca nera. 
+                    Solo i fatti che contano e le passioni che ci guidano, analizzati con spirito critico.
+                </p>
+                <div class="flex justify-center gap-4 mt-2">
+                    <a href="#in-evidenza" class="bg-cobalto text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-blue-900 transition-all hover:-translate-y-1 hover:shadow-xl shadow-md">
+                        Leggi le ultime
+                    </a>
+                </div>
             </div>
+            
         </div>
     </section>
 
@@ -182,19 +214,18 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.15 // L'animazione parte quando l'elemento è visibile al 15%
+                threshold: 0.15 
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Ferma l'osservazione una volta animato
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
 
-            // Applica l'observer a tutti gli elementi con la classe fade-in-up
             document.querySelectorAll('.fade-in-up').forEach((el) => {
                 observer.observe(el);
             });
