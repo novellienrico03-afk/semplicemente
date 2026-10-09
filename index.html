@@ -16,6 +16,7 @@
                         'antracite': '#2F2F2F',
                         'cobalto': '#002366',
                         'highlight': '#FFF9C4',
+                        'rosa': '#F43F5E',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -28,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Animazioni di Entrata (Scroll) */
+        /* Animazioni di Entrata allo Scroll */
         .fade-in-up {
             opacity: 0;
             transform: translateY(30px);
@@ -43,32 +44,29 @@
         .delay-300 { transition-delay: 300ms; }
         .delay-400 { transition-delay: 400ms; }
 
-        /* --- NOVITÀ: Animazioni SVG Cervello Stile Bending Spoons --- */
-        .brain-stroke {
-            stroke-dasharray: 1500;
-            stroke-dashoffset: 1500;
-            animation: drawBrain 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-        .brain-stroke-delay {
-            stroke-dasharray: 800;
-            stroke-dashoffset: 800;
-            animation: drawBrain 2.5s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
+        /* Tracciamento Animato del Cervello Rosa */
+        .brain-contour {
+            stroke-dasharray: 2600;
+            stroke-dashoffset: 2600;
+            animation: drawBrain 2.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
         }
         @keyframes drawBrain {
             to { stroke-dashoffset: 0; }
         }
-        .brain-glow {
-            filter: drop-shadow(0 0 12px rgba(0, 35, 102, 0.4));
+
+        /* Effetto Bagliore Neon Rosa su Hover */
+        .pink-glow {
+            filter: drop-shadow(0 0 18px rgba(244, 63, 94, 0.65));
         }
     </style>
 </head>
-<body class="bg-neve text-antracite font-sans antialiased selection:bg-highlight selection:text-antracite">
+<body class="bg-neve text-antracite font-sans antialiased selection:bg-rosa selection:text-white">
 
     <!-- HEADER STICKY -->
     <header class="fixed w-full top-0 z-50 bg-neve/80 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
             <a href="#" class="flex flex-col group">
-                <h1 class="text-2xl font-extrabold tracking-tighter text-cobalto group-hover:text-blue-800 transition-colors">Semplice Mente.</h1>
+                <h1 class="text-2xl font-extrabold tracking-tighter text-cobalto group-hover:text-rosa transition-colors">Semplice Mente.</h1>
             </a>
             
             <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
@@ -92,38 +90,81 @@
                 </div>
                 
                 <a href="#chi-siamo" class="hover:text-cobalto transition-colors">Chi Siamo</a>
-                <a href="#newsletter" class="bg-antracite text-white px-5 py-2.5 rounded-full hover:bg-cobalto transition-colors shadow-md hover:shadow-lg">Iscriviti</a>
+                <a href="#newsletter" class="bg-antracite text-white px-5 py-2.5 rounded-full hover:bg-rosa transition-colors shadow-md hover:shadow-lg">Iscriviti</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION VISIONARIA CON CERVELLO ANIMATO -->
-    <section id="home" class="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[75vh] flex flex-col justify-center items-center text-center">
+    <!-- HERO SECTION CON CONTORNO CERVELLO ROSA -->
+    <section id="home" class="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[80vh] flex flex-col justify-center items-center text-center">
         
-        <!-- Contenitore Testo + Cervello -->
-        <div class="fade-in-up relative max-w-3xl mx-auto py-20 px-8 flex flex-col items-center group cursor-default">
+        <!-- Box con contorno cervello perimetrale -->
+        <div class="fade-in-up relative max-w-4xl mx-auto px-10 sm:px-16 md:px-24 py-16 md:py-24 flex flex-col items-center group cursor-default">
             
-            <!-- CONTORNO CERVELLO (SVG Vettoriale) -->
-            <svg class="absolute inset-0 w-full h-full text-cobalto opacity-20 group-hover:opacity-100 group-hover:brain-glow transition-all duration-700 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" preserveAspectRatio="xMidYMid meet">
-                <!-- Silhouette esterna -->
-                <path class="brain-stroke" d="M176,216H136V128m-16,88H80a40,40,0,0,1-37.56-26.27A32,32,0,0,1,36,132,40,40,0,0,1,60.27,61.42,40,40,0,0,1,128,48a40,40,0,0,1,67.73,13.42A40,40,0,0,1,220,132a32,32,0,0,1-6.44,57.73A40,40,0,0,1,176,216Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
-                <!-- Dettagli interni (Pieghe) -->
-                <path class="brain-stroke-delay" d="M128,104a32,32,0,0,0-58.31-18M128,104a32,32,0,0,1,58.31-18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                <path class="brain-stroke-delay" d="M128,160a32,32,0,0,0-54.21-23.75M128,160a32,32,0,0,1,54.21-23.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            <!-- SVG PERIMETRALE DETTAGLIATO (SOLO BORDO, NESSUNA LINEA CENTRALE) -->
+            <svg class="absolute inset-0 w-full h-full text-rosa opacity-30 group-hover:opacity-100 group-hover:pink-glow transition-all duration-700 pointer-events-none" 
+                 viewBox="0 0 900 560" preserveAspectRatio="none" fill="none">
+                
+                <!-- Sagoma perimetrale dettagliata con circonvoluzioni anatomiche -->
+                <path class="brain-contour" 
+                      d="M 450,42 
+                         C 480,42 495,30 525,32 
+                         C 555,34 570,48 598,46 
+                         C 630,44 650,60 678,66 
+                         C 710,72 730,96 756,112 
+                         C 785,130 804,158 824,188 
+                         C 845,220 858,252 854,286 
+                         C 850,320 836,346 816,372 
+                         C 798,395 776,410 750,424 
+                         C 730,435 715,455 690,466 
+                         C 665,478 640,488 610,488 
+                         C 585,488 570,474 545,474 
+                         C 525,474 515,492 495,502 
+                         C 475,512 455,516 450,516 
+                         C 445,516 425,512 405,502 
+                         C 385,492 375,474 355,474 
+                         C 330,474 315,488 290,488 
+                         C 260,488 235,478 210,466 
+                         C 185,455 170,435 150,424 
+                         C 124,410 102,395 84,372 
+                         C 64,346 50,320 46,286 
+                         C 42,252 55,220 76,188 
+                         C 96,158 115,130 144,112 
+                         C 170,96 190,72 222,66 
+                         C 250,60 270,44 302,46 
+                         C 330,48 345,34 375,32 
+                         C 405,30 420,42 450,42 Z" 
+                      stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Solchi e creste esterne (posizionati solo sui bordi esterni) -->
+                <path class="brain-contour" 
+                      d="M 598,46 C 610,68 625,78 645,82
+                         M 678,66 C 692,88 712,102 735,110
+                         M 756,112 C 772,136 786,158 792,185
+                         M 824,188 C 812,216 805,242 804,272
+                         M 816,372 C 788,368 765,378 745,395
+                         M 690,466 C 676,444 655,438 630,442
+                         M 302,46 C 290,68 275,78 255,82
+                         M 222,66 C 208,88 188,102 165,110
+                         M 144,112 C 128,136 114,158 108,185
+                         M 76,188 C 88,216 95,242 96,272
+                         M 84,372 C 112,368 135,378 155,395
+                         M 210,466 C 224,444 245,438 270,442" 
+                      stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
             </svg>
 
-            <!-- CONTENUTO TESTUALE -->
-            <div class="relative z-10">
+            <!-- TESTO CENTRALE (Completamente leggibile e non coperto) -->
+            <div class="relative z-10 max-w-2xl mx-auto">
                 <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[1.1] mb-6">
                     La notizia,<br>
-                    <span class="text-cobalto">spiegata semplice.</span>
+                    <span class="text-cobalto group-hover:text-rosa transition-colors duration-500">spiegata semplice.</span>
                 </h2>
                 <p class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto font-medium mb-10 leading-relaxed">
                     Nessun rumore di fondo. Nessuna cronaca nera. 
                     Solo i fatti che contano e le passioni che ci guidano, analizzati con spirito critico.
                 </p>
                 <div class="flex justify-center gap-4 mt-2">
-                    <a href="#in-evidenza" class="bg-cobalto text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-blue-900 transition-all hover:-translate-y-1 hover:shadow-xl shadow-md">
+                    <a href="#in-evidenza" class="bg-cobalto text-white text-lg font-semibold px-8 py-4 rounded-full hover:bg-rosa transition-all hover:-translate-y-1 hover:shadow-xl shadow-md">
                         Leggi le ultime
                     </a>
                 </div>
