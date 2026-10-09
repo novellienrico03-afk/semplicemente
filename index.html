@@ -1,131 +1,100 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Semplice Mente | La politica, spiegata semplice</title>
-    <meta name="description" content="Semplice Mente: l'informazione politica chiara, verificata e senza rumore. Capisci cosa succede davvero in pochi minuti.">
-    <meta name="keywords" content="politica, informazione, fact checking, notizie semplici, italia, europa">
-    
-    <meta property="og:title" content="Semplice Mente | La politica, spiegata semplice">
-    <meta property="og:description" content="Informazione chiara, verificata e senza rumore per chi vuole capire cosa succede davvero, in pochi minuti.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.semplicemente.it"> <meta property="og:image" content="https://www.semplicemente.it/img/social-preview.jpg"> <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+import Link from 'next/link';
 
-    <nav>
-        <a href="#" class="logo">🧠 Semplice Mente</a>
-        <ul class="nav-links">
-            <li><a href="#spiegazioni">Spiegazioni</a></li>
-            <li><a href="#guide">Guide</a></li>
-            <li><a href="#fatti">Fact-Checking</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        
-        <header class="hero">
-            <h1>La politica,<br>spiegata semplice.</h1>
-            <p>Informazione chiara, verificata e senza rumore per chi vuole capire cosa succede davvero, in pochi minuti.</p>
-            <a href="#spiegazioni" class="cta-primary">Inizia a leggere</a>
-        </header>
-
-        <section id="spiegazioni">
-            <div class="section-header">
-                <h2>Ultime spiegazioni</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="grid">
-                <a href="#" class="card">
-                    <span class="card-tag">Economia • 4 min</span>
-                    <h3>Cosa cambia davvero con la nuova manovra</h3>
-                    <p>Abbiamo analizzato i tre punti chiave su tasse, pensioni e sanità per capire l'impatto reale sulle tue tasche.</p>
-                    <div class="card-footer">Leggi l'articolo <span>→</span></div>
-                </a>
-                <a href="#" class="card">
-                    <span class="card-tag">Europa • 5 min</span>
-                    <h3>Case Green: la guida definitiva alle nuove norme</h3>
-                    <p>Cosa prevede la direttiva UE sull'efficienza energetica degli edifici e quali scadenze devi conoscere.</p>
-                    <div class="card-footer">Leggi l'articolo <span>→</span></div>
-                </a>
-            </div>
-        </section>
-
-        <section id="guide">
-            <div class="section-header">
-                <h2>Guide per principianti</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="grid">
-                <a href="#" class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>🏛️ Come funziona il Parlamento</h3>
-                    <p>Perché abbiamo due camere e come fanno a mettersi d'accordo per creare una legge in Italia.</p>
-                </a>
-                <a href="#" class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>🗳️ Come si vota in Italia</h3>
-                    <p>Il sistema elettorale spiegato senza paroloni: cos'è il proporzionale e come funziona il maggioritario.</p>
-                </a>
-                <a href="#" class="card">
-                    <span class="card-tag">Le Basi</span>
-                    <h3>💶 Cos'è il Debito Pubblico</h3>
-                    <p>Perché lo Stato chiede soldi in prestito, a chi li deve davvero e cosa succede se non può ripagarli.</p>
-                </a>
-            </div>
-        </section>
-
-        <section id="fatti">
-            <div class="section-header">
-                <h2>Fatti vs Opinioni</h2>
-                <div class="accent-line"></div>
-            </div>
-
-            <div class="fact-check-container">
-                <div class="fact-check-item">
-                    <div class="statement">"L'Europa ci impone di mangiare farina di insetti."</div>
-                    <div class="analysis">L'UE ha autorizzato la vendita di alcuni alimenti a base di insetti, come ha fatto per migliaia di altri prodotti. Si tratta di un'autorizzazione commerciale per le aziende che vogliono produrli, non di un obbligo di consumo per i cittadini.</div>
-                    <div class="verdict-badge v-falso">❌ Falso</div>
-                </div>
-
-                <div class="fact-check-item">
-                    <div class="statement">"Le tasse in Italia sono le più alte d'Europa."</div>
-                    <div class="analysis">L'Italia ha una pressione fiscale molto alta (intorno al 42.5%), ma secondo gli ultimi dati Eurostat consolidati siamo dietro a paesi come Francia, Belgio e Danimarca, che si attestano sopra il 45%.</div>
-                    <div class="verdict-badge v-fuorviante">⚠️ Fuorviante</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="newsletter-box">
-            <h2>Capire la politica in 5 minuti</h2>
-            <p>Unisciti alla lista d'attesa. Riceverai un riassunto dei fatti più importanti, spiegati con parole semplici, direttamente nella tua inbox.</p>
-            
-            <form class="form-mini" action="https://formspree.io/f/IL_TUO_CODICE_QUI" method="POST">
-                <input type="email" name="email" placeholder="La tua migliore email..." required>
-                <button type="submit" class="btn-submit">Iscriviti</button>
-            </form>
-            
-            <p class="privacy-note">Zero spam garantito. Potrai cancellarti con un clic in qualsiasi momento.</p>
-        </section>
-
-    </div>
-
-    <footer>
-        <div class="footer-links">
-            <a href="#">Chi Siamo</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Contatti</a>
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-200">
+      
+      {/* HEADER / NAVIGATION */}
+      <header className="border-b border-neutral-200 py-6">
+        <div className="max-w-5xl mx-auto px-6 flex justify-between items-baseline">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight text-neutral-900">Semplice Mente</h1>
+            <p className="text-sm text-neutral-500 mt-1">La notizia, spiegata semplice.</p>
+          </div>
+          <nav className="hidden md:flex gap-6 text-sm font-medium text-neutral-600">
+            <Link href="/politica" className="hover:text-neutral-900 transition-colors">Politica</Link>
+            <Link href="/musica" className="hover:text-neutral-900 transition-colors">Musica</Link>
+            <Link href="/filmografia" className="hover:text-neutral-900 transition-colors">Filmografia</Link>
+            <Link href="/sport" className="hover:text-neutral-900 transition-colors">Sport</Link>
+          </nav>
         </div>
-        <p>&copy; 2026 Semplice Mente. L'informazione chiara è un diritto.</p>
-    </footer>
+      </header>
 
-</body>
-</html>
+      {/* IN PRIMO PIANO */}
+      <section className="max-w-5xl mx-auto px-6 py-12 md:py-20">
+        <div className="bg-white border border-neutral-200 p-8 md:p-12 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-3 block">In evidenza</span>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-neutral-900 leading-tight mb-4">
+            Come funzionano i bandi del PNRR: una guida senza burocratese
+          </h2>
+          <p className="text-neutral-600 text-lg mb-8 max-w-2xl leading-relaxed">
+            Mettiamo da parte le polemiche tra partiti e analizziamo i dati. Cosa significa davvero questo piano per lo sviluppo locale e come i comuni stanno gestendo i fondi.
+          </p>
+          <Link href="/articolo/pnrr-spiegato" className="inline-flex items-center text-sm font-semibold bg-neutral-900 text-white px-5 py-2.5 rounded-full hover:bg-neutral-800 transition-colors">
+            Leggi l'articolo
+          </Link>
+        </div>
+      </section>
+
+      {/* GRIGLIA CATEGORIE */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* SEMPLICE POLITICA */}
+          <div className="group">
+            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Politica</h3>
+            <article className="mb-6">
+              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
+                Elezioni e sondaggi: perché spesso non ci azzeccano
+              </h4>
+              <p className="text-neutral-500 text-sm line-clamp-2">
+                Un'analisi oggettiva sui margini di errore dei campionamenti e su come la statistica viene spesso fraintesa dai media tradizionali.
+              </p>
+            </article>
+          </div>
+
+          {/* SEMPLICE MUSICA */}
+          <div className="group">
+            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Musica</h3>
+            <article className="mb-6">
+              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
+                L'evoluzione del suono nell'indie rock: le chitarre di King Krule
+              </h4>
+              <p className="text-neutral-500 text-sm line-clamp-2">
+                Come accordature non convenzionali e riverberi hanno ridefinito le atmosfere malinconiche dell'underground britannico.
+              </p>
+            </article>
+          </div>
+
+          {/* SEMPLICE FILMOGRAFIA */}
+          <div className="group">
+            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Filmografia</h3>
+            <article className="mb-6">
+              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
+                Estetica e narrazione: l'impatto di Django Unchained
+              </h4>
+              <p className="text-neutral-500 text-sm line-clamp-2">
+                La grammatica visiva di Quentin Tarantino applicata allo spaghetti western: un equilibrio tra citazionismo e critica sociale.
+              </p>
+            </article>
+          </div>
+
+          {/* SEMPLICE SPORT */}
+          <div className="group">
+            <h3 className="text-xl font-bold text-neutral-900 mb-6 border-b border-neutral-200 pb-2">Semplice Sport</h3>
+            <article className="mb-6">
+              <h4 className="text-lg font-medium text-neutral-800 group-hover:text-blue-600 transition-colors mb-2">
+                Storie dalla Seconda Categoria: passione e tattica in provincia
+              </h4>
+              <p className="text-neutral-500 text-sm line-clamp-2">
+                Lontano dai riflettori della Serie A, il calcio dilettantistico modenese offre uno spaccato di sport autentico e comunità.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+      
+    </main>
+  );
+}
